@@ -1,0 +1,44 @@
+# react-node-ts-fake-mercado-libre
+
+Hi there!
+
+I hope you are doing well. In this project, you can find a software solution that consumes the MercadoLibre API and displays a list of products based on the customer's search.
+
+For the backend, I used Node.js and Express. As a developer always looking to improve the code quality, I have integrated TypeScript and ESLint as well.
+
+## Technologies 💻
+
+- **Backend**: Node.js, Express, TypeScript, Eslint
+- **Frontend**: React, TypeScript, Scss, Eslint
+
+## Author
+
+- **Sergio Penagos** 🔥
+  - [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile)
+  - [GitHub](https://github.com/gioudi)
+  - [GitHub2](https://github.com/SergioVass)
+  - 
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/gioudi/react-node-ts-fake-free-store.git`
+2. Navigate to the project directory: `cd project-directory`
+3. Install dependencies:
+   - Backend: `cd backend && npm install`
+   - Frontend: `cd frontend && npm install`
+
+## Usage
+
+1. Start the backend server: `cd backend && npm start`
+2. Start the frontend development server: `cd frontend && npm start`
+
+## Screenshots
+
+![Screenshot](path-to-screenshot.png)
+
+
+## Versions 🚀
+
+- Node.js: ^20
+- Express: ^4.18.3
+- Eslint: ^8.57.0
