@@ -4,10 +4,10 @@ import { Author, Item } from "../types/siteInterfaces";
 export function mapSearchResponseToNewStructure(response: SearchResponse){
     //Define authors
 
-    const authorName = response.results[0]?.attributes.find(attr => attr)?.values[0]?.name || 'Unknown';
+    //const authorName = response.results[0]?.attributes.find(attr => attr)?.values[0]?.name || 'Unknown';
     const author: Author = {
-        name: authorName,
-        lastname: ''
+        name: 'Sergio',
+        lastname: 'Penagos'
     }
 
     //Get Categories
