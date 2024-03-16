@@ -1,0 +1,35 @@
+name: Comment on Pull Request
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR commits
+        id: pr_commits
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/:owner/:repo/pulls/:pull_number/commits
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pull_number: ${{ github.event.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Format commits
+        id: format_commits
+        run: |
+          echo "Commits in this PR:"
+          jq -r '.[].commit.message' <<< "${{ steps.pr_commits.outputs.data }}"
+        shell: bash
+      
+      - name: Comment on PR
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const commits = `${{ steps.format_commits.outputs.stdout }}`;
+            const message = `Hello! Thanks for your pull request. Here are the commits:\n${commits}`;
+            const { owner, repo, number } = context.issue;
+            github.issues.createComment({ owner, repo, issue_number: number, body: message });
