@@ -1,2 +1,2 @@
 //API VARIABLE
-export const API_BASE_URL = 'https://api.mercadolibre.com/';
+export const API_BASE_URL = "https://api.mercadolibre.com/";

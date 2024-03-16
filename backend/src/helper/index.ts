@@ -1,4 +1,7 @@
-import { RealSearchResponse, RealItemResponse } from "../types/originalInterfaces";
+import {
+  RealSearchResponse,
+  RealItemResponse,
+} from "../types/originalInterfaces";
 import { Author, Item } from "../types/mappedInterfaces";
 
 export function mapSearchResponseToNewStructure(
@@ -12,7 +15,6 @@ export function mapSearchResponseToNewStructure(
     lastname: "Penagos",
   };
 
-  
   if ("results" in response) {
     //Get Categories
     const categories = response.filters.find(
