@@ -4,7 +4,8 @@ Hi there!
 
 I hope you are doing well. In this project, you can find a software solution that consumes the MercadoLibre API and displays a list of products based on the customer's search.
 
-For the backend, I used Node.js and Express. As a developer always looking to improve the code quality, I have integrated TypeScript and ESLint as well.
+For the backend, I used Node.js and Express, besides for the frontend, I used React and Redux. As a developer always looking to improve the code quality, I have integrated TypeScript and ESLint as well.
+
 
 ## Technologies 💻
 
@@ -14,7 +15,7 @@ For the backend, I used Node.js and Express. As a developer always looking to im
 ## Author
 
 - **Sergio Penagos** 🔥
-  - [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile)
+  - [LinkedIn](https://www.linkedin.com/in/analyst-sergio-penagos)
   - [GitHub](https://github.com/gioudi)
   - [GitHub2](https://github.com/SergioVass)
   - 
@@ -22,14 +23,14 @@ For the backend, I used Node.js and Express. As a developer always looking to im
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/gioudi/react-node-ts-fake-free-store.git`
-2. Navigate to the project directory: `cd project-directory`
+2. Navigate to the project directory: `cd react-node-ts-fake-free-store`
 3. Install dependencies:
    - Backend: `cd backend && npm install`
    - Frontend: `cd frontend && npm install`
 
 ## Usage
 
-1. Start the backend server: `cd backend && npm start`
+1. Start the backend server: `cd backend && npm run build && node dist/index.js`
 2. Start the frontend development server: `cd frontend && npm start`
 
 ## Screenshots
@@ -42,3 +43,6 @@ For the backend, I used Node.js and Express. As a developer always looking to im
 - Node.js: ^20
 - Express: ^4.18.3
 - Eslint: ^8.57.0
+- TypeScript: ^4.9.5
+- React: ^18.2.0
+- Jest: ^5.17.0
