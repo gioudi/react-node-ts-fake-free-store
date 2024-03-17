@@ -16,12 +16,14 @@ jobs:
           repo: ${{ github.event.repository.name }}
           pull_number: ${{ github.event.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          
+      
       - name: Format commits
         id: format_commits
         run: |
           echo "Commits in this PR:"
-          jq -r '.[].commit.message' <<< "${{ steps.pr_commits.outputs.data }}"
+          for commit in $(jq -r '.[].commit.message' <<< "${{ steps.pr_commits.outputs.data }}"); do
+            echo "- $commit"
+          done
         shell: bash
       
       - name: Comment on PR
