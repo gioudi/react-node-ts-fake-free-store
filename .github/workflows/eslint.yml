@@ -1,21 +1,52 @@
-# .github/workflows/lint.yml
-name: Lint and Auto-fix
+name: Lint
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  lint:
+  lint-backend:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
 
-      - name: Setup Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js for backend
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+        working-directory: ./backend
 
-      - name: Install dependencies
+      - name: Install dependencies for backend
         run: npm install
+        working-directory: ./backend
 
-      - name: Lint code and auto-fix
+      - name: Lint and auto-fix backend
         run: npm run lint -- --fix
+        working-directory: ./backend
+
+  lint-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js for frontend
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+        working-directory: ./frontend
+
+      - name: Install dependencies for frontend
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Lint and auto-fix frontend
+        run: npm run lint -- --fix
+        working-directory: ./frontend
