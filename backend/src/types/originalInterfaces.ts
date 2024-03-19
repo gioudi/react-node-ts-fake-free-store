@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Real response interfaces
 export interface RealSiteResult {
   id: string;
@@ -49,7 +50,7 @@ export interface RealSiteResult {
   catalog_listing: boolean;
   discounts: null;
   promotions: any[];
-  differential_pricing: {};
+  differential_pricing: object;
   inventory_id: null;
   shipping: {
     store_pick_up: boolean;

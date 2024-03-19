@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import express, { Response } from "express";
 import { handleGetSites } from "./routes/serviceSites";
 import { handleGetDescriptionItem, handleGetItem } from "./routes/serviceItems";

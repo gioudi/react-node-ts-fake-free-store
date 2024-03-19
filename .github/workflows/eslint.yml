@@ -1,4 +1,4 @@
-name: Lint
+name: ESLint
 
 on:
   push:
@@ -9,44 +9,20 @@ on:
       - main
 
 jobs:
-  lint-backend:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Setup Node.js for backend
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-        working-directory: ./backend
+      - name: Install frontend dependencies and run ESLint
+        run: |
+          cd frontend
+          npm install
+          npm run lint
 
-      - name: Install dependencies for backend
-        run: npm install
-        working-directory: ./backend
-
-      - name: Lint and auto-fix backend
-        run: npm run lint -- --fix
-        working-directory: ./backend
-
-  lint-frontend:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js for frontend
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-        working-directory: ./frontend
-
-      - name: Install dependencies for frontend
-        run: npm install
-        working-directory: ./frontend
-
-      - name: Lint and auto-fix frontend
-        run: npm run lint -- --fix
-        working-directory: ./frontend
+      - name: Install backend dependencies and run ESLint
+        run: |
+          cd backend
+          npm install
+          npm run lint
