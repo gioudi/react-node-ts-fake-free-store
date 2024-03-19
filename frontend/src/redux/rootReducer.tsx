@@ -1,4 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
-const rootReducer = combineReducers({});
+import siteSlice from "./siteSlice";
+const rootReducer = combineReducers({
+    sites: siteSlice
+});
 
 export default rootReducer;
