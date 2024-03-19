@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   RealSearchResponse,
   RealItemResponse,
@@ -5,11 +6,10 @@ import {
 import { Author, Item } from "../types/mappedInterfaces";
 
 export function mapSearchResponseToNewStructure(
-  response: RealSearchResponse | RealItemResponse
+  response: RealSearchResponse | RealItemResponse,
 ) {
   //Define authors
 
-  //const authorName = response.results[0]?.attributes.find(attr => attr)?.values[0]?.name || 'Unknown';
   const author: Author = {
     name: "Sergio",
     lastname: "Penagos",
@@ -18,7 +18,7 @@ export function mapSearchResponseToNewStructure(
   if ("results" in response) {
     //Get Categories
     const categories = response.filters.find(
-      (filter) => filter.id === "category"
+      (filter) => filter.id === "category",
     );
     const categoryValues = categories
       ? categories.values.map((value: any) => value.name)
