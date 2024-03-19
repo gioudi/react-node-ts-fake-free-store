@@ -1,11 +1,7 @@
 import React from "react";
-
+import Index from "./router";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">Initial Demo</header>
-    </div>
-  );
+  return <Index></Index>;
 }
 
 export default App;
