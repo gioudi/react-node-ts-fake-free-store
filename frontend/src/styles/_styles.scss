@@ -1,0 +1,14 @@
+a {
+    color: $color-dark;
+    text-decoration: none; 
+}
+
+/* Card */
+.item-card {
+    &__image{
+        width: 11.25rem;
+        height: 11.25rem;
+        object-fit: container;
+        border-radius: .25rem;
+    }
+}
