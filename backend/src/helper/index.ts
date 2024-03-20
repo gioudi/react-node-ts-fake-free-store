@@ -2,8 +2,9 @@
 import {
   RealSearchResponse,
   RealItemResponse,
+  RealCategoriesResponse,
 } from "../types/originalInterfaces";
-import { Author, Item } from "../types/mappedInterfaces";
+import { Author, BreadcrumbCategory, Item } from "../types/mappedInterfaces";
 
 export function mapSearchResponseToNewStructure(
   response: RealSearchResponse | RealItemResponse,
@@ -64,4 +65,26 @@ export function mapSearchResponseToNewStructure(
       item,
     };
   }
+}
+
+export function mapCategoriesResponseToNewStructure(
+  response: RealCategoriesResponse,
+) {
+  const { id, name, picture, total_items_in_this_category, path_from_root } =
+    response;
+
+  const pathFromRootMapped: BreadcrumbCategory[] = path_from_root.map(
+    (category: any) => ({
+      id: category.id,
+      name: category.name,
+    }),
+  );
+
+  return {
+    id,
+    name,
+    picture,
+    totalItems: total_items_in_this_category,
+    pathFromRoot: pathFromRootMapped,
+  };
 }
