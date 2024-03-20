@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import { RealSearchResponse } from "../types/originalInterfaces";
+import { RealCategoriesResponse } from "../types/originalInterfaces";
+import { mapCategoriesResponseToNewStructure } from "../helper";
 
 /**
  * handleGetCategories.
@@ -18,12 +19,13 @@ export async function handleGetCategories(req: Request, res: Response) {
       throw new Error("parameter is required");
     }
     const apiUrl = `${API_BASE_URL}/categories/${id}`;
-    const response = await axios.get<RealSearchResponse>(apiUrl, {
+    const response = await axios.get<RealCategoriesResponse>(apiUrl, {
       headers: {
         "Content-Type": "application/json",
       },
     });
-    res.json(response.data);
+    const mappeddata = mapCategoriesResponseToNewStructure(response.data);
+    res.json(mappeddata);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });

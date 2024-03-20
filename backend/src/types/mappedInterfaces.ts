@@ -32,3 +32,16 @@ export interface ItemResponse {
   author: Author;
   item: Item;
 }
+
+export interface BreadcrumbCategory {
+  id: string;
+  name: string;
+}
+
+export interface BreadcrumbData {
+  id: string;
+  name: string;
+  picture: string;
+  totalItems: number;
+  pathFromRoot: BreadcrumbCategory[];
+}
