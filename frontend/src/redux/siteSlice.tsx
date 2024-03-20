@@ -2,19 +2,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import API from "../service";
 
-interface ItemsState {
+interface SitesState {
     loading: boolean;
     error: null | string;
     data: any[]; 
 }
 
-const initialState: ItemsState = {
+const initialState: SitesState = {
     loading: false,
     error: null,
     data: []
 }
 
-export const fetchSites = createAsyncThunk('items/fetchSites', async (payload: string) => {
+export const fetchSites = createAsyncThunk('sites/fetchSites', async (payload: string) => {
     const response = await fetch(API.getSites(payload));
     const data = await response.json();
     return data;
