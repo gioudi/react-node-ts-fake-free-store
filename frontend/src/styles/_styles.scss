@@ -1,14 +1,451 @@
-a {
-    color: $color-dark;
-    text-decoration: none; 
+/***************
+**** Fonts ****
+***************/
+
+/* Font sizes */
+.ml-title {
+  font-size: $font-size-title;
 }
 
-/* Card */
-.item-card {
-    &__image{
-        width: 11.25rem;
-        height: 11.25rem;
-        object-fit: container;
-        border-radius: .25rem;
-    }
+.ml-subtitle {
+  font-size: $font-size-subtitle;
 }
+
+h1,
+.h1,
+.ml-h1 {
+  font-size: $font-size-h1;
+}
+
+h2,
+.h2,
+.ml-h2 {
+  font-size: $font-size-h2;
+}
+
+h3,
+.h3,
+.ml-h3 {
+  font-size: $font-size-h3;
+}
+
+h4,
+.h4,
+.ml-h4 {
+  font-size: $font-size-h4;
+}
+
+h5,
+.h5,
+.ml-h5 {
+  font-size: $font-size-h5;
+}
+
+h6,
+.h6,
+.ml-h6 {
+  font-size: $font-size-h6;
+}
+
+.normal {
+  font-size: $font-size-normal;
+}
+
+small,
+.small,
+.ml-small {
+  font-size: $font-size-small;
+}
+@media (min-width: 0) {
+  .ml-xs-small {
+    font-size: $font-size-small;
+  }
+
+  .ml-xs-normal {
+    font-size: $font-size-normal;
+  }
+
+  .ml-xs-title {
+    font-size: $font-size-title;
+  }
+
+  .ml-xs-subtitle {
+    font-size: $font-size-subtitle;
+  }
+
+  .ml-xs-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .ml-xs-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .ml-xs-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .ml-xs-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .ml-xs-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .ml-xs-h6 {
+    font-size: $font-size-h6;
+  }
+}
+@media (min-width: 576px) {
+  .ml-sm-small {
+    font-size: $font-size-small;
+  }
+
+  .ml-sm-normal {
+    font-size: $font-size-normal;
+  }
+
+  .ml-sm-title {
+    font-size: $font-size-title;
+  }
+
+  .ml-sm-subtitle {
+    font-size: $font-size-subtitle;
+  }
+
+  .ml-sm-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .ml-sm-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .ml-sm-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .ml-sm-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .ml-sm-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .ml-sm-h6 {
+    font-size: $font-size-h6;
+  }
+}
+@media (min-width: 768px) {
+  .ml-md-small {
+    font-size: $font-size-small;
+  }
+
+  .ml-md-normal {
+    font-size: $font-size-normal;
+  }
+
+  .ml-md-title {
+    font-size: $font-size-title;
+  }
+
+  .ml-md-subtitle {
+    font-size: $font-size-subtitle;
+  }
+
+  .ml-md-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .ml-md-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .ml-md-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .ml-md-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .ml-md-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .ml-md-h6 {
+    font-size: $font-size-h6;
+  }
+}
+@media (min-width: 992px) {
+  .ml-lg-small {
+    font-size: $font-size-small;
+  }
+
+  .ml-lg-normal {
+    font-size: $font-size-normal;
+  }
+
+  .ml-lg-title {
+    font-size: $font-size-title;
+  }
+
+  .ml-lg-subtitle {
+    font-size: $font-size-subtitle;
+  }
+
+  .ml-lg-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .ml-lg-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .ml-lg-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .ml-lg-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .ml-lg-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .ml-lg-h6 {
+    font-size: $font-size-h6;
+  }
+}
+@media (min-width: 1200px) {
+  .ml-xl-small {
+    font-size: $font-size-small;
+  }
+
+  .ml-xl-normal {
+    font-size: $font-size-normal;
+  }
+
+  .ml-xl-title {
+    font-size: $font-size-title;
+  }
+
+  .ml-xl-subtitle {
+    font-size: $font-size-subtitle;
+  }
+
+  .ml-xl-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .ml-xl-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .ml-xl-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .ml-xl-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .ml-xl-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .ml-xl-h6 {
+    font-size: $font-size-h6;
+  }
+}
+
+/* Font weights */
+.ml-fw-300 {
+  font-weight: 300;
+}
+
+.ml-fw-400 {
+  font-weight: 400;
+}
+
+.ml-fw-600 {
+  font-weight: 600;
+}
+
+.ml-fw-700 {
+  font-weight: 700;
+}
+@media (min-width: 0) {
+  .ml-fw-xs-300 {
+    font-weight: 300;
+  }
+
+  .ml-fw-xs-400 {
+    font-weight: 400;
+  }
+
+  .ml-fw-xs-600 {
+    font-weight: 600;
+  }
+
+  .ml-fw-xs-700 {
+    font-weight: 700;
+  }
+}
+@media (min-width: 576px) {
+  .ml-fw-sm-300 {
+    font-weight: 300;
+  }
+
+  .ml-fw-sm-400 {
+    font-weight: 400;
+  }
+
+  .ml-fw-sm-600 {
+    font-weight: 600;
+  }
+
+  .ml-fw-sm-700 {
+    font-weight: 700;
+  }
+}
+@media (min-width: 768px) {
+  .ml-fw-md-300 {
+    font-weight: 300;
+  }
+
+  .ml-fw-md-400 {
+    font-weight: 400;
+  }
+
+  .ml-fw-md-600 {
+    font-weight: 600;
+  }
+
+  .ml-fw-md-700 {
+    font-weight: 700;
+  }
+}
+@media (min-width: 992px) {
+  .ml-fw-lg-300 {
+    font-weight: 300;
+  }
+
+  .ml-fw-lg-400 {
+    font-weight: 400;
+  }
+
+  .ml-fw-lg-600 {
+    font-weight: 600;
+  }
+
+  .ml-fw-lg-700 {
+    font-weight: 700;
+  }
+}
+@media (min-width: 1200px) {
+  .ml-fw-xl-300 {
+    font-weight: 300;
+  }
+
+  .ml-fw-xl-400 {
+    font-weight: 400;
+  }
+
+  .ml-fw-xl-600 {
+    font-weight: 600;
+  }
+
+  .ml-fw-xl-700 {
+    font-weight: 700;
+  }
+}
+
+/***************
+**** Colors ****
+***************/
+
+/* Black & White */
+.ml-color-black {
+  color: $color-black;
+}
+
+.ml-bg-black {
+  background-color: $color-black;
+}
+
+.ml-color-white {
+  color: $color-white;
+}
+
+.ml-bg-white {
+  background-color: $color-white;
+}
+
+/* Primary */
+
+.ml-color-primary {
+    color: $color-primary;
+  }
+  
+  .ml-bg-primary {
+    background-color: $color-primary;
+  }
+  
+  .ml-color-dark {
+    color: $color-dark;
+  }
+  
+  .ml-bg-dark {
+    background-color: $color-dark;
+  }
+  
+  .ml-color-medium {
+    color: $color-medium;
+  }
+  
+  .ml-bg-medium {
+    background-color: $color-medium;
+  }
+  
+  .ml-color-light {
+    color: $color-light;
+  }
+  
+  .ml-bg-light {
+    background-color: $color-light;
+  }
+
+
+  .ml-color-white-90 {
+    color: $color-white-90;
+  }
+  
+  .ml-bg-white-90 {
+    background-color: $color-white-90;
+  }
+  
+  .ml-color-white {
+    color: $color-white;
+  }
+  
+  .ml-bg-white {
+    background-color: $color-white;
+  }
+  
+  .ml-color-blue {
+    color: $color-blue;
+  }
+  
+  .ml-bg-blue {
+    background-color: $color-blue;
+  }
+
+
+  .ml-border-color{
+    border-color: $color-medium;
+  }
+
