@@ -2,5 +2,34 @@ $color-primary: #ffe600;
 $color-dark: #333333;
 $color-medium: #666666;
 $color-light: #999999;
-$color-white: #eee;
+$color-white-90: #eee;
+$color-white: #fff;
 $color-blue: #3483fa;
+$color-black: #000000;
+
+
+
+/* Fonts */
+$font-size-title: 7.5rem; /* 120px */
+$font-size-subtitle: 4.5rem; /* 72px */
+$font-size-h1: 4rem; /* 64px */
+$font-size-h2: 3.5rem; /* 56px */
+$font-size-h3: 3rem; /* 48px */
+$font-size-h4: 2rem; /* 32px */
+$font-size-h5: 1.5rem; /* 24px */
+$font-size-h6: 1.125rem; /* 18px */
+$font-size-normal: 1rem; /* 16px */
+$font-size-small: .875rem; /* 14px */
+$font-size-extra-small: .75rem; /* 12px */
+
+/* Border radius */
+$border-radius-xs: .25rem; /* 4px */
+$border-radius-sm: .5rem; /* 8px */
+$border-radius-md: .75rem; /* 12px */
+$border-radius-lg: 1.5rem; /* 24px */
+
+/* Box shadow */
+$box-shadow-sm: 0 4px 12px rgba(18, 25, 84, .07);
+$box-shadow-md: 0 6px 14px rgba(18, 25, 84, .07);
+$box-shadow-lg: 0 10px 16px rgba(18, 25, 84, .07);
+$box-shadow-xl: 0 16px 24px rgba(18, 25, 84, .07);
