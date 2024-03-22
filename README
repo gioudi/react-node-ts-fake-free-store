@@ -39,8 +39,8 @@ For the backend, I used Node.js and Express, besides for the frontend, I used Re
 ![Screenshot](https://github.com/gioudi/react-node-ts-fake-free-store/tree/main/assets/Image2.png)
 
 ## Links
-
-- [Frontend](https://react-node-ts-free-store.netlify.app)
+1. Netlify detected my project as phishing and dropped off :(, so I can not connect frontend and backend again until find a solution, instead of I invite you to download the project and follow installation steps 
+- [Frontend](https://react-node-ts-fake-free-store.netlify.app/)
 - [Backend](https://react-node-ts-fake-free-store.onrender.com/api/sites?q=pesas)
 - [Backend](https://react-node-ts-fake-free-store.onrender.com/api/items/MLA1572309002)
 
