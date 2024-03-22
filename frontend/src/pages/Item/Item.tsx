@@ -34,7 +34,11 @@ const Item = (): JSX.Element => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <section className="container vh-100 d-flex align-items-center justify-content-center">
+          <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        </section>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
@@ -61,7 +65,7 @@ const Item = (): JSX.Element => {
                   </article>
                   <article className="col-12 col-lg-4">
                     <span className="ml-small ml-color-medium mb-3">
-                      {item?.item?.condition} - {item?.item?.sold_quantity ?? 0}{" "}
+                      {item?.item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.item?.sold_quantity ?? 0}{" "}
                       vendidos
                     </span>
                     <h5 className="h5 ml-fw-600 ml-color-dark ml-h4 my-3">
