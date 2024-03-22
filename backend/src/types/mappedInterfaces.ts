@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Mapped interfaces to FrontEnd
 
 export interface Author {
@@ -39,9 +40,22 @@ export interface BreadcrumbCategory {
 }
 
 export interface BreadcrumbData {
+  author: Author;
   id: string;
   name: string;
   picture: string;
   totalItems: number;
   pathFromRoot: BreadcrumbCategory[];
+}
+
+export interface ItemDescription {
+  text: string;
+  plain_text: string;
+  last_updated: string;
+  date_created: string;
+  snapshot: any;
+}
+export interface ItemDescriptionResponse {
+  item: ItemDescription;
+  author: Author;
 }
