@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { fetchSites } from "../redux/siteSlice";
 
-const Navbar = () => {
+const MlNavbar = () => {
   const dispatch = useDispatch<any>();
   const [searchQuery, setSearchQuery] = useState("");
   const { loading } = useSelector((state: any) => state.sites);
@@ -54,4 +54,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MlNavbar;
