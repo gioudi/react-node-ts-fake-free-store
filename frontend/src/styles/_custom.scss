@@ -12,6 +12,10 @@ a {
     box-shadow: $box-shadow-sm;
 }
 
+.p-32{
+  padding: 2rem;
+}
+
 /* Ml Navbar */
 
 .ml-navbar {
@@ -30,13 +34,12 @@ a {
       position: absolute;
       right: 0;
       top: 0;
-      z-index: 2;
+      z-index: 10;
       display: flex;
       width: 2.375rem;
       height: 2.375rem;
       line-height: 2.375rem;
       text-align: center;
-      pointer-events: none;
       padding: 0.125rem;
       justify-content: center;
       align-items: center;
@@ -47,6 +50,9 @@ a {
         width: auto;
         height: 1rem;
         object-fit: contain;
+      }
+      &:hover{
+        cursor: pointer;
       }
 
       &:focus {
@@ -108,3 +114,20 @@ a {
     }
   }
 }
+
+/* Ml Detail View */
+
+.ml-item__view__image{
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 1200px) {
+
+  .ml-item__view__image {
+      width: 42.5rem;
+      max-height: 42.5rem;
+      object-fit: cover;
+  }
+}
+

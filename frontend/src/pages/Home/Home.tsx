@@ -10,7 +10,6 @@ const Home = (): JSX.Element => {
   const loading = useSelector((state: any) => state.sites.loading);
   const error = useSelector((state: any) => state.sites.error);
 
-  console.log(categories)
   return (
     <>
       {loading ? (
@@ -20,7 +19,7 @@ const Home = (): JSX.Element => {
       ) : (
         <>
         <MlBreadcrumb payload={{ loading, error, categories: categories?.path_from_root }} />
-        <section className="ml-bg-white panel p-3 rounded-1">
+        <section className={`ml-bg-white panel  rounded-1 ${items && 'p-3'}`}>
           <article className="row">
             {items && items.slice(0, 4).map((item: Item, index: number) => (
               <article className="col-12" key={item.id}>
