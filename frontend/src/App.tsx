@@ -1,11 +1,18 @@
 import React from "react";
 import Index from "./router";
-import Navbar from "./components/Navbar";
+import MlNavbar from "./components/MlNavbar";
 function App() {
   return (
     <>
-    <Navbar/>
-    <Index/></>
+    <MlNavbar/>
+    <section className="container">
+      <article className="row">
+        <article className="col">
+        <Index/>
+        </article>
+      </article>
+    </section>
+    </>
   );
 }
 

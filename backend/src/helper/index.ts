@@ -9,23 +9,29 @@ import { Author, BreadcrumbCategory, Item } from "../types/mappedInterfaces";
 export function mapSearchResponseToNewStructure(
   response: RealSearchResponse | RealItemResponse,
 ) {
-  //Define authors
-
+  // Define authors
   const author: Author = {
     name: "Sergio",
     lastname: "Penagos",
   };
 
   if ("results" in response) {
-    //Get Categories
+    // Get Categories
     const categories = response.filters.find(
       (filter) => filter.id === "category",
     );
     const categoryValues = categories
-      ? categories.values.map((value: any) => value.name)
+      ? categories.values.map((value: any) => ({
+          id: value.id,
+          name: value.name,
+          path_from_root: value.path_from_root.map((category: any) => ({
+            id: category.id,
+            name: category.name,
+          })),
+        }))
       : [];
 
-    //Get Items
+    // Get Items
     const items: Item[] = response.results.map((result) => ({
       id: result.id,
       title: result.title,
@@ -41,7 +47,7 @@ export function mapSearchResponseToNewStructure(
 
     return {
       author,
-      categories: categoryValues,
+      categories: categoryValues[0],
       items,
     };
   } else {
@@ -63,6 +69,7 @@ export function mapSearchResponseToNewStructure(
     return {
       author,
       item,
+      category_id: response.category_id,
     };
   }
 }
