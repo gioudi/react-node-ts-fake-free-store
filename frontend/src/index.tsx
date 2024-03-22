@@ -5,8 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./redux/rootReducer";
-import './styles/index.scss';
-
+import "./styles/index.scss";
 
 //Configure Store
 const store = configureStore({

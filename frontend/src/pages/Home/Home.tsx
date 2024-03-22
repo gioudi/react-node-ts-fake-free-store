@@ -18,17 +18,20 @@ const Home = (): JSX.Element => {
         <p>Error: {error}</p>
       ) : (
         <>
-        <MlBreadcrumb payload={{ loading, error, categories: categories?.path_from_root }} />
-        <section className={`ml-bg-white panel  rounded-1 ${items && 'p-3'}`}>
-          <article className="row">
-            {items && items.slice(0, 4).map((item: Item, index: number) => (
-              <article className="col-12" key={item.id}>
-                <MlCard payload={item} />
-                {index < 3 && <hr className="ml-border-color"/>}
-              </article>
-            ))}
-          </article>
-        </section>
+          <MlBreadcrumb
+            payload={{ loading, error, categories: categories?.path_from_root }}
+          />
+          <section className={`ml-bg-white panel  rounded-1 ${items && "p-3"}`}>
+            <article className="row">
+              {items &&
+                items.slice(0, 4).map((item: Item, index: number) => (
+                  <article className="col-12" key={item.id}>
+                    <MlCard payload={item} />
+                    {index < 3 && <hr className="ml-border-color" />}
+                  </article>
+                ))}
+            </article>
+          </section>
         </>
       )}
     </>

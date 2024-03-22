@@ -3,7 +3,7 @@ import Index from "./router";
 function App() {
   return (
     <>
-    <Index/>
+      <Index />
     </>
   );
 }

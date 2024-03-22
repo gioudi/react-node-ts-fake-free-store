@@ -1,5 +1,5 @@
 body {
-    background-color: $color-white-90;
+  background-color: $color-white-90;
 }
 
 a {
@@ -8,11 +8,11 @@ a {
 }
 
 .panel {
-    border-radius: $border-radius-xs;
-    box-shadow: $box-shadow-sm;
+  border-radius: $border-radius-xs;
+  box-shadow: $box-shadow-sm;
 }
 
-.p-32{
+.p-32 {
   padding: 2rem;
 }
 
@@ -29,7 +29,7 @@ a {
 
   &__search {
     position: relative;
-  
+
     &__button {
       position: absolute;
       right: 0;
@@ -51,7 +51,7 @@ a {
         height: 1rem;
         object-fit: contain;
       }
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
 
@@ -60,40 +60,36 @@ a {
       }
     }
     &__input {
-        border-radius: 0;
-        padding-right: 0;
-        height: 2.4375rem;
+      border-radius: 0;
+      padding-right: 0;
+      height: 2.4375rem;
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-            border-color: $color-white;
-        }
-        &::-webkit-search-cancel-button {
-          display: none;
-        }
-      
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: $color-white;
+      }
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
     }
-  
   }
-  
-@media screen and (min-width: 768px) {
 
+  @media screen and (min-width: 768px) {
     .ml-navbar__search {
-        min-width: 40.25rem;
+      min-width: 40.25rem;
     }
   }
 }
 
-
 /* Ml Breadcrumb */
 
 .ml-breadcrumb {
-    width: 100%;
-    &__item {
-        color: $color-medium;
-        font-size: $font-size-small;
-    }
+  width: 100%;
+  &__item {
+    color: $color-medium;
+    font-size: $font-size-small;
+  }
 }
 
 /* Ml Card */
@@ -102,13 +98,13 @@ a {
     width: 11.25rem;
     height: 11.25rem;
     object-fit: container;
-    border-radius:$border-radius-xs;
+    border-radius: $border-radius-xs;
   }
-  &__body{
+  &__body {
     &__price {
       margin-bottom: 2rem;
     }
-    &__badge{
+    &__badge {
       width: 1rem;
       height: 1rem;
     }
@@ -117,17 +113,15 @@ a {
 
 /* Ml Detail View */
 
-.ml-item__view__image{
+.ml-item__view__image {
   width: 100%;
   height: auto;
 }
 
 @media screen and (min-width: 1200px) {
-
   .ml-item__view__image {
-      width: 42.5rem;
-      max-height: 42.5rem;
-      object-fit: cover;
+    width: 42.5rem;
+    max-height: 42.5rem;
+    object-fit: cover;
   }
 }
-

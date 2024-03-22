@@ -18,14 +18,22 @@ const MlCard = ({ payload }: { payload: Item }): JSX.Element => {
           <h5 className="card-text item-card__body__price d-inline-flex align-items-center ml-fw-400 py-lg-3  ml-h5">
             {formattedMoney(payload.price.amount)}
             {payload.free_shipping && (
-                <img src={require('../assets/ic_shipping.png')} className="ms-2 item-card__body__badge" alt="shipping" />
+              <img
+                src={require("../assets/ic_shipping.png")}
+                className="ms-2 item-card__body__badge"
+                alt="shipping"
+              />
             )}
           </h5>
-          <h6 className="card-title item-card__title ml-h6 ml-fw-400">{payload.title}</h6>
+          <h6 className="card-title item-card__title ml-h6 ml-fw-400">
+            {payload.title}
+          </h6>
         </div>
       </article>
       <div className="col col-lg-3 py-lg-3">
-        <small className="ml-small ml-fw-400 ml-color-medium">{payload.condition}</small>
+        <small className="ml-small ml-fw-400 ml-color-medium">
+          {payload.condition}
+        </small>
       </div>
     </Link>
   );

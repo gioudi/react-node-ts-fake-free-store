@@ -12,12 +12,14 @@ const Item = (): JSX.Element => {
   const loading = useSelector((state: any) => state.item.loading);
   const error = useSelector((state: any) => state.item.error);
   const categories = useSelector((state: any) => state.category.data);
-  const itemDescription = useSelector((state: any) => state.item.itemDescription);
+  const itemDescription = useSelector(
+    (state: any) => state.item.itemDescription,
+  );
   const dispatch = useDispatch<any>();
 
   useEffect(() => {
     const fetchData = async () => {
-      if(id){
+      if (id) {
         await dispatch(fetchItem(id));
         await dispatch(fetchItemDescription(id));
       }
@@ -37,37 +39,58 @@ const Item = (): JSX.Element => {
         <p>Error: {error}</p>
       ) : (
         <>
-          <MlBreadcrumb payload={{ loading, error, categories: categories.pathFromRoot }} />
-          <section className="ml-bg-white panel p-32 rounded-1">
-            <article className="row">
-              <article className="col-12 col-lg-8">
-                {item?.item?.picture && (
-                  <img src={item?.item?.picture} className="ms-2 ml-item__view__image mb-md-5" alt={item?.item?.title} />
-              )}
-              </article>
-              <article className="col-12 col-lg-4">
-                <span className="ml-small ml-color-medium mb-3">{item?.item?.condition} - {item?.item?.sold_quantity ?? 0} vendidos</span>
-                  <h5 className="h5 ml-fw-600 ml-color-dark ml-h4 my-3">
-                    {item?.item?.title}
-                  </h5>
-                  {item?.item?.price && (
-                     <h3 className="h3 ml-fw-400  ml-color-dark ml-h3 my-3">
-                     {formattedMoney(item?.item?.price?.amount)}
-                   </h3>
-              )}
-               
-                  <button className="btn btn-primary ml-bg-blue my-3 w-100">
-                    Comprar
-                  </button>
-              </article>
-            </article>
-            <article className="row">
-              <div className="col-12 col-lg-8">
-                <h4 className="ml-fw-400 mb-4 ml-color-dark">Descripción del producto</h4>
-                <p className="ml-fw-400 ml-normal mt-2 ml-color-medium">{itemDescription.plain_text}</p>
-              </div>
-            </article>
-          </section>
+          {categories && (
+            <>
+              <MlBreadcrumb
+                payload={{
+                  loading,
+                  error,
+                  categories: categories.pathFromRoot,
+                }}
+              />
+              <section className="ml-bg-white panel p-32 rounded-1">
+                <article className="row">
+                  <article className="col-12 col-lg-8">
+                    {item?.item?.picture && (
+                      <img
+                        src={item?.item?.picture}
+                        className="ms-2 ml-item__view__image mb-md-5"
+                        alt={item?.item?.title}
+                      />
+                    )}
+                  </article>
+                  <article className="col-12 col-lg-4">
+                    <span className="ml-small ml-color-medium mb-3">
+                      {item?.item?.condition} - {item?.item?.sold_quantity ?? 0}{" "}
+                      vendidos
+                    </span>
+                    <h5 className="h5 ml-fw-600 ml-color-dark ml-h4 my-3">
+                      {item?.item?.title}
+                    </h5>
+                    {item?.item?.price && (
+                      <h3 className="h3 ml-fw-400  ml-color-dark ml-h3 my-3">
+                        {formattedMoney(item?.item?.price?.amount)}
+                      </h3>
+                    )}
+
+                    <button className="btn btn-primary ml-bg-blue my-3 w-100">
+                      Comprar
+                    </button>
+                  </article>
+                </article>
+                <article className="row">
+                  <div className="col-12 col-lg-8">
+                    <h4 className="ml-fw-400 mb-4 ml-color-dark">
+                      Descripción del producto
+                    </h4>
+                    <p className="ml-fw-400 ml-normal mt-2 ml-color-medium">
+                      {itemDescription.plain_text}
+                    </p>
+                  </div>
+                </article>
+              </section>
+            </>
+          )}
         </>
       )}
     </>
