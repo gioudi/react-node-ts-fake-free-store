@@ -30,8 +30,3 @@ export interface ItemResponse {
   author: Author;
   item: Item;
 }
-
-
-
-
-  

@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import { mapSearchResponseToNewStructure } from "../helper";
+import {
+  mapDescriptionResponseToNewStructure,
+  mapSearchResponseToNewStructure,
+} from "../helper";
 import { RealItemInfo, RealItemResponse } from "../types/originalInterfaces";
 
 /**
@@ -38,7 +41,7 @@ export async function handleGetDescriptionItem(req: Request, res: Response) {
 
   try {
     const itemDescription = await getDescription(id);
-    res.json(itemDescription);
+    res.json(mapDescriptionResponseToNewStructure(itemDescription));
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }

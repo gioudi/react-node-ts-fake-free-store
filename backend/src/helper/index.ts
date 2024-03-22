@@ -3,6 +3,7 @@ import {
   RealSearchResponse,
   RealItemResponse,
   RealCategoriesResponse,
+  RealItemInfo,
 } from "../types/originalInterfaces";
 import { Author, BreadcrumbCategory, Item } from "../types/mappedInterfaces";
 
@@ -77,6 +78,10 @@ export function mapSearchResponseToNewStructure(
 export function mapCategoriesResponseToNewStructure(
   response: RealCategoriesResponse,
 ) {
+  const author: Author = {
+    name: "Sergio",
+    lastname: "Penagos",
+  };
   const { id, name, picture, total_items_in_this_category, path_from_root } =
     response;
 
@@ -88,10 +93,28 @@ export function mapCategoriesResponseToNewStructure(
   );
 
   return {
+    author,
     id,
     name,
     picture,
     totalItems: total_items_in_this_category,
     pathFromRoot: pathFromRootMapped,
+  };
+}
+
+export function mapDescriptionResponseToNewStructure(response: RealItemInfo) {
+  const author: Author = {
+    name: "Sergio",
+    lastname: "Penagos",
+  };
+  const { text, plain_text, last_updated, date_created, snapshot } = response;
+
+  return {
+    author,
+    text,
+    plain_text,
+    last_updated,
+    date_created,
+    snapshot,
   };
 }

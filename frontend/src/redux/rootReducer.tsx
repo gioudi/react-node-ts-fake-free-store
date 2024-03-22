@@ -4,9 +4,9 @@ import itemSlice from "./itemSlice";
 import categorySlice from "./categorySlice";
 
 const rootReducer = combineReducers({
-    sites: siteSlice,
-    item: itemSlice,
-    category: categorySlice
+  sites: siteSlice,
+  item: itemSlice,
+  category: categorySlice,
 });
 
 export default rootReducer;
