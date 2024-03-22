@@ -35,7 +35,14 @@ For the backend, I used Node.js and Express, besides for the frontend, I used Re
 
 ## Screenshots
 
-![Screenshot](path-to-screenshot.png)
+![Screenshot1](assets/Image1.png)
+![Screenshot2](assets/Image2.png)
+
+## Links
+
+- [Frontend](https://react-node-ts-free-store.netlify.app)
+- [Backend](https://react-node-ts-fake-free-store.onrender.com/api/sites?q=pesas)
+- [Backend](https://react-node-ts-fake-free-store.onrender.com/api/items/MLA1572309002)
 
 
 ## Versions 🚀
