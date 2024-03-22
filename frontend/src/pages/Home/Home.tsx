@@ -13,10 +13,10 @@ const Home = (): JSX.Element => {
   return (
     <>
       {loading ? (
-          <section className="container vh-100 d-flex align-items-center justify-content-center">
+        <section className="container vh-100 d-flex align-items-center justify-content-center">
           <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+            <span className="visually-hidden">Loading...</span>
+          </div>
         </section>
       ) : error ? (
         <p>Error: {error}</p>

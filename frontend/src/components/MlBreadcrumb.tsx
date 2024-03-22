@@ -1,7 +1,7 @@
 import React from "react";
 
 type Category = {
-  error: "";
+  error: string | "";
   loading: boolean;
   categories: { id: string; name: string }[];
 };
